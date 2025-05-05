@@ -1,0 +1,4 @@
+Settings Menu:
+- Gamma
+- Volume (Main, Music, SFX)
+- Display Mode
