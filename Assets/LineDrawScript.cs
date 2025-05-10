@@ -21,8 +21,9 @@ public class LineDrawScript : MonoBehaviour
     public EdgeCollider2D myEdgeCollider;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void DrawLine(string newFunction)
     {
+        function = newFunction;
         // variables
         myLineRenderer.positionCount = amountOfPoints;
         myLineRenderer.startWidth = lineWidth;
