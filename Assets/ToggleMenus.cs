@@ -3,10 +3,11 @@ using UnityEngine;
 public class ToggleMenus : MonoBehaviour
 {
     public GameObject EscapeMenu;
+    public GameObject SettingsMenu;
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape)){
+        if(Input.GetKeyDown(KeyCode.Escape) && SettingsMenu.activeSelf == false){
             ToggleMenu();
             // Debug.Log("Entered");
         }
