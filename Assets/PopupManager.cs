@@ -20,10 +20,10 @@ public class PopupManager : MonoBehaviour
     public GameObject functionInputPanel;
     public TMP_InputField functionInputField;
 
-    private int checkX_coord1 = -14;
-    private int checkY_coord1 = 0;
-    private int checkX_coord2 = 14;
-    private int checkY_coord2 = 0;
+    [SerializeField] private int checkX_coord1;
+    [SerializeField] private int checkY_coord1;
+    [SerializeField] private int checkX_coord2;
+    [SerializeField] private int checkY_coord2;
 
     private bool coord1Correct = false;
     private bool coord2Correct = false;
