@@ -18,4 +18,8 @@ public class EscapeMenu : MonoBehaviour
     public void Reload(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void ToStart(){
+        SceneManager.LoadScene("Startscreen");
+    }
 }

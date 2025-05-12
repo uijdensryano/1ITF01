@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "1ITF01.sln"
+    "dotnet.defaultSolution": "DrawingFunction.sln"
 }
