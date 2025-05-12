@@ -1,27 +1,12 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public class StarCollector : MonoBehaviour
+public class StarCollecting : MonoBehaviour
 {
-    public Text starCounterText; // Assign this in the Inspector
-    private int starCount = 0;
-
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Star"))
+        if (other.CompareTag("Car"))  // Or use any tag your car has
         {
-            Debug.Log("Star collected!");
-            Destroy(other.gameObject);
-            starCount++;
-            UpdateStarCounterUI();
-        }
-    }
-
-    void UpdateStarCounterUI()
-    {
-        if (starCounterText != null)
-        {
-            starCounterText.text = "Stars: " + starCount;
+            Destroy(gameObject);
         }
     }
 }
