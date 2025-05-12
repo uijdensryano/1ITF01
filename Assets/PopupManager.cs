@@ -20,14 +20,16 @@ public class PopupManager : MonoBehaviour
     public GameObject functionInputPanel;
     public TMP_InputField functionInputField;
 
-    private int checkX_coord1 = 2;
-    private int checkY_coord1 = 5;
-    private int checkX_coord2 = 2;
-    private int checkY_coord2 = 5;
+    private int checkX_coord1 = -14;
+    private int checkY_coord1 = 0;
+    private int checkX_coord2 = 14;
+    private int checkY_coord2 = 0;
 
     private bool coord1Correct = false;
     private bool coord2Correct = false;
     private bool functionInputCorrect = false;
+
+    public DriveCar2D carDriver;
 
     void Start()
     {
@@ -154,6 +156,8 @@ public class PopupManager : MonoBehaviour
             functionInputCorrect = true;
             Debug.Log("Function input is valid: " + functionInputField.text);
             lineDrawer.DrawLine(functionInputField.text);
+            // Start driving the car
+            carDriver.EnableAutoDrive();
         }
         else
         {

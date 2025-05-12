@@ -35,4 +35,10 @@ public class DriveCar2D : MonoBehaviour
             carBody.AddTorque(-input * rotationTorque * Time.fixedDeltaTime);
         }
     }
+
+    public void EnableAutoDrive()
+    {
+        autoDrive = true;
+    }
+
 }
