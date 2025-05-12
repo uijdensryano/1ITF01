@@ -1881,8 +1881,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82475f2c51b4f2d4f8ecc36fd6dd2901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 1633668501}
+  audioSource: {fileID: 65745140}
   gammaSlider: {fileID: 901699944}
-  globalLight: {fileID: 0}
+  globalLight: {fileID: 619394801}
 --- !u!114 &1301663166
 MonoBehaviour:
   m_ObjectHideFlags: 0
