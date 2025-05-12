@@ -845,6 +845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c3f78e470209c74a8281e3d001d05c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineDrawer: {fileID: 0}
   panel1: {fileID: 808042082}
   openPopupButton1: {fileID: 1376602457}
   inputField_coord1_1: {fileID: 1059696940}
@@ -855,6 +856,7 @@ MonoBehaviour:
   inputField_coord2_2: {fileID: 923013451}
   functionInputPanel: {fileID: 1074579275}
   functionInputField: {fileID: 1673699421}
+  carDriver: {fileID: 0}
 --- !u!4 &506424055
 Transform:
   m_ObjectHideFlags: 0
