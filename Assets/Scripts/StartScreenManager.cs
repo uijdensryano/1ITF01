@@ -14,11 +14,12 @@ public class StartScreenManager : MonoBehaviour
     public Button quitButton;
 
     [Header("Timing")]
-    public float imageDelayBeforeFade = 1.5f;          // Nieuw: hoe lang de afbeelding volledig zichtbaar blijft
+    public float imageDelayBeforeFade = 1.5f;
     public float imageFadeDuration = 2f;
     public float textFadeInDuration = 2f;
     public float textStayDuration = 2f;
     public float textFadeOutDuration = 1.5f;
+    public float sceneLoadDelay = 0.5f;  // Vertraging na klikken op Play
 
     [Header("Audio")]
     public AudioSource musicSource;
@@ -28,14 +29,14 @@ public class StartScreenManager : MonoBehaviour
 
     [Header("Cursor")]
     public Texture2D customCursor;
-    public Vector2 cursorHotspot = Vector2.zero;
 
     void Start()
     {
-        // Zet aangepaste cursor
+        // Zet aangepaste cursor met het midden van de afbeelding als klikpunt
         if (customCursor != null)
         {
-            Cursor.SetCursor(customCursor, cursorHotspot, CursorMode.Auto);
+            Vector2 centerHotspot = new Vector2(customCursor.width / 2f, customCursor.height / 2f);
+            Cursor.SetCursor(customCursor, centerHotspot, CursorMode.Auto);
         }
 
         // Speel achtergrondmuziek
@@ -47,8 +48,8 @@ public class StartScreenManager : MonoBehaviour
         }
 
         // Initialiseer UI-elementen
-        gameTitle.canvasRenderer.SetAlpha(0f); // Titeltekst onzichtbaar
-        introImage.canvasRenderer.SetAlpha(1f); // Afbeelding volledig zichtbaar
+        gameTitle.canvasRenderer.SetAlpha(0f);
+        introImage.canvasRenderer.SetAlpha(1f);
         playButton.gameObject.SetActive(false);
         optionsButton.gameObject.SetActive(false);
         quitButton.gameObject.SetActive(false);
@@ -58,21 +59,16 @@ public class StartScreenManager : MonoBehaviour
 
     IEnumerator AnimateIntro()
     {
-        // Laat afbeelding eerst zichtbaar staan
         yield return new WaitForSeconds(imageDelayBeforeFade);
 
-        // Start tegelijk: afbeelding vervaagt weg, tekst verschijnt
         introImage.CrossFadeAlpha(0f, imageFadeDuration, false);
         gameTitle.CrossFadeAlpha(1f, textFadeInDuration, false);
 
-        // Wacht tot de tekst volledig is verschenen en even blijft
         yield return new WaitForSeconds(Mathf.Max(imageFadeDuration, textFadeInDuration) + textStayDuration);
 
-        // Vervaag de tekst
         gameTitle.CrossFadeAlpha(0f, textFadeOutDuration, false);
         yield return new WaitForSeconds(textFadeOutDuration);
 
-        // Toon de knoppen
         playButton.gameObject.SetActive(true);
         optionsButton.gameObject.SetActive(true);
         quitButton.gameObject.SetActive(true);
@@ -89,7 +85,13 @@ public class StartScreenManager : MonoBehaviour
     public void OnPlayButton()
     {
         PlayClickSound();
-        SceneManager.LoadScene("GameScene");
+        StartCoroutine(LoadSceneWithDelay("SampleScene")); // ← Pas deze naam aan naar jouw scène!
+    }
+
+    IEnumerator LoadSceneWithDelay(string sceneName)
+    {
+        yield return new WaitForSeconds(sceneLoadDelay);
+        SceneManager.LoadScene(sceneName);
     }
 
     public void OnOptionsButton()
