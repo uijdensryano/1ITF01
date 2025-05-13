@@ -89,7 +89,7 @@ public class StartScreenManager : MonoBehaviour
     public void OnPlayButton()
     {
         PlayClickSound();
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void OnOptionsButton()

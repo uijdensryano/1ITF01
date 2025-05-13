@@ -4,6 +4,7 @@ public class ToggleMenus : MonoBehaviour
 {
     public GameObject EscapeMenu;
     public GameObject SettingsMenu;
+    public GameObject Background;
 
     void Update()
     {
@@ -14,6 +15,7 @@ public class ToggleMenus : MonoBehaviour
     }
 
     public void ToggleMenu(){
+        Background.SetActive(!Background.activeSelf);
         EscapeMenu.SetActive(!EscapeMenu.activeSelf);
     }
 }
