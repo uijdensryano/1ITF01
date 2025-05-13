@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Star
   - Car
+  - FinishPlatform
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - FinishPlatform
   - Water
   - UI
   - 
