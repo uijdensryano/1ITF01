@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class endscreenManager : MonoBehaviour
 {
@@ -78,5 +79,20 @@ public class endscreenManager : MonoBehaviour
             starColor.a = 0.3f; // Dim the star
             star.color = starColor;
         }
+    }
+
+    public void ResetScene()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.buildIndex);
+    }
+
+    public void LoadLevel3()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
+
+    public void Home(){
+        SceneManager.LoadScene("Startscreen");
     }
 }
