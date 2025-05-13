@@ -2521,12 +2521,12 @@ MonoBehaviour:
   textFadeInDuration: 2
   textStayDuration: 2
   textFadeOutDuration: 1.5
+  sceneLoadDelay: 0.5
   musicSource: {fileID: 65745140}
   sfxSource: {fileID: 1574359815}
   backgroundMusic: {fileID: 8300000, guid: 0f74e721b121e3c47a78ffd6a3a12174, type: 3}
   clickSound: {fileID: 8300000, guid: 8a77c15420cbf204ab79aaa6b6848c1e, type: 3}
-  customCursor: {fileID: 2800000, guid: 2d60eb2f2a553bf41a516bd85d611f30, type: 3}
-  cursorHotspot: {x: 0, y: 0}
+  customCursor: {fileID: 2800000, guid: 1ca2977785292b043b2ceaf4f36a2648, type: 3}
 --- !u!4 &1580174777
 Transform:
   m_ObjectHideFlags: 0
