@@ -89,7 +89,7 @@ public class endscreenManager : MonoBehaviour
 
     public void LoadLevel3()
     {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
     public void Home(){

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7044888484223970748}
   m_Layer: 0
   m_Name: Front-wheel
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -282,8 +282,14 @@ MonoBehaviour:
   carBody: {fileID: 8351213782196624389}
   frontWheel: {fileID: 5420704774669920600}
   rearWheel: {fileID: 6838408401235082579}
+  scoreManager: {fileID: 0}
+  endScreenManager: {fileID: 0}
   motorTorque: 500
   rotationTorque: 300
+  raycastDistance: 3
+  platformLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &6555679657856822724
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +304,7 @@ GameObject:
   - component: {fileID: 3873569984718064204}
   m_Layer: 0
   m_Name: Back-wheel
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -449,7 +455,7 @@ GameObject:
   - component: {fileID: 5746401583372263613}
   m_Layer: 0
   m_Name: Car
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
