@@ -85,7 +85,7 @@ public class StartScreenManager : MonoBehaviour
     public void OnPlayButton()
     {
         PlayClickSound();
-        StartCoroutine(LoadSceneWithDelay("SampleScene")); // ← Pas deze naam aan naar jouw scène!
+        StartCoroutine(LoadSceneWithDelay("Tutorial")); // ← Pas deze naam aan naar jouw scène!
     }
 
     IEnumerator LoadSceneWithDelay(string sceneName)
