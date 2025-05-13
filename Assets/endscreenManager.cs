@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class endscreenManager : MonoBehaviour
 {
     public GameObject endscreenFailure;
+    public GameObject Line;
     public Button restartButton;
 
     private int starsCollected = 2;
@@ -22,6 +23,7 @@ public class endscreenManager : MonoBehaviour
 
     public void OpenEndScreenFailure()
     {
+        Line.SetActive(false);
         endscreenFailure.SetActive(true);
     }
 
@@ -32,7 +34,7 @@ public class endscreenManager : MonoBehaviour
 
     public void OpenEndScreenSuccess(int collectedStars)
     {
-        Debug.Log("help");
+        Line.SetActive(false);
         starsCollected = Mathf.Clamp(collectedStars, 0, stars.Length);
         UpdateStarsDisplay();
         endscreenSuccess.SetActive(true);
